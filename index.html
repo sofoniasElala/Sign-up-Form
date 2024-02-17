@@ -17,32 +17,33 @@
 
         <div class="form">
             <header>
-                <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. <br><br> You know you want to.</p>
+                <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. <br>Sign up <em>now</em> to get started.<br><br> You know you want to.</p>
             </header>
             <form action="" method="post">
                <fieldset>
                     <h2>Let's do this!</h2>
                     <div>
-                        <label for="first_name">FIRST NAME</label>
+                        <label class="left-label" for="first_name">FIRST NAME</label>
                         <input type="text" id="first_name" name="first_name">
-                        <label for="last_name">LAST NAME</label>
+                        <label class="right-label" for="last_name">LAST NAME</label>
                         <input type="text" id="last_name" name="last_name">
                     </div>
-                    <div><label for="email">EMAIL</label>
+                    <div>
+                        <label class="left-label" for="email">EMAIL</label>
                         <input type="text" id="email" name="email">
-                        <label for="phone_number">PHONE NUMBER</label>
+                        <label class="right-label" for="phone_number">PHONE NUMBER</label>
                         <input type="text" id="phone_number" name="phone_number">
                     </div>
                     <div>
-                        <label for="">PASSWORD</label>
+                        <label class="left-label" for="">PASSWORD</label>
                         <input type="text" id="password" name="password">
-                        <label for="confirm_password">CONFIRM PASSWORD</label>
+                        <label class="right-label" for="confirm_password">CONFIRM PASSWORD</label>
                         <input type="text" id="confirm_password" name="confirm_password">
                     </div>
                 </fieldset>
                 <button type="submit">Create Account</button>
             </form>
-            <p>Already have an account? Log in</p>
+            <p id="login">Already have an account? <span>Log in</span></p>
         </div>
 
     </body>
