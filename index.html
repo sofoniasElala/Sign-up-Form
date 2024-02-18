@@ -36,9 +36,9 @@
                     </div>
                     <div>
                         <label class="left-label" for="password">PASSWORD</label>
-                        <input class="error" type="text" id="password" name="password">
+                        <input class="error" type="password" id="password" name="password">
                         <label class="right-label" for="confirm_password">CONFIRM PASSWORD</label>
-                        <input class="error" type="text" id="confirm_password" name="confirm_password">
+                        <input class="error" type="password" id="confirm_password" name="confirm_password">
                         <span class="error">* Passwords do not match</span>
                     </div>
                 </fieldset>
@@ -46,6 +46,21 @@
             </form>
             <p id="login">Already have an account? <span>Log in</span></p>
         </div>
+
+        <script>
+            let password = document.querySelector('#password');
+            let confirmPassword = document.querySelector("#confirm_password");
+
+            confirmPassword.addEventListener('input', ()=> {
+                console.log(password.value.substring(0, confirmPassword.value.length),  confirmPassword.value)
+                 if(password.value.substring(0, confirmPassword.value.length) == confirmPassword.value){
+                    confirmPassword.style.borderColor = 'green';
+                 } else {
+                    confirmPassword.style.borderColor = 'red';
+                 }
+            })
+
+        </script>
 
     </body>
 </html>
