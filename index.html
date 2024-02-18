@@ -35,10 +35,11 @@
                         <input type="text" id="phone_number" name="phone_number">
                     </div>
                     <div>
-                        <label class="left-label" for="">PASSWORD</label>
-                        <input type="text" id="password" name="password">
+                        <label class="left-label" for="password">PASSWORD</label>
+                        <input class="error" type="text" id="password" name="password">
                         <label class="right-label" for="confirm_password">CONFIRM PASSWORD</label>
-                        <input type="text" id="confirm_password" name="confirm_password">
+                        <input class="error" type="text" id="confirm_password" name="confirm_password">
+                        <span class="error">* Passwords do not match</span>
                     </div>
                 </fieldset>
                 <button type="submit">Create Account</button>
