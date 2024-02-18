@@ -36,9 +36,9 @@
                     </div>
                     <div>
                         <label class="left-label" for="password">PASSWORD</label>
-                        <input class="error" type="password" id="password" name="password">
+                        <input class="error" type="password" id="password" name="password" required>
                         <label class="right-label" for="confirm_password">CONFIRM PASSWORD</label>
-                        <input class="error" type="password" id="confirm_password" name="confirm_password">
+                        <input class="error" type="password" id="confirm_password" name="confirm_password" required>
                         <span class="error">* Passwords do not match</span>
                     </div>
                 </fieldset>
@@ -69,13 +69,17 @@
             btn.addEventListener("click", (e)=> {
                 let validState = true;
                 e.preventDefault();
-                if(password.value != '' | confirmPassword.value != '' ){
-                if(password.value !== confirmPassword.value){
+                if(((password.value != '' && confirmPassword.value != '') && password.value !== confirmPassword.value) ||
+                    (password.value == '' || confirmPassword.value == '')){
+                    confirmPassword.reportValidity();
+                    password.reportValidity();
+                    if(password.value !== confirmPassword.value)
                     document.querySelector("span[class=error]").style.visibility = 'visible';
+                
                     document.querySelector("input[class=error]").style.borderColor = 'red';
                     document.querySelector("input[class=error]~input[class=error]").style.borderColor = 'red';
                     validState = false;
-                } }
+                 } 
                 if(!email.checkValidity()){
                     email.reportValidity();
                     validState = false;
